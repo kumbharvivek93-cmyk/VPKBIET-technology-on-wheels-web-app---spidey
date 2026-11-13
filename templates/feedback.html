@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+<section class="page-head"><h1>Feedback</h1><p>Tell us what you think of Technology on Wheels.</p></section>
+<section class="wrap grid2 reveal">
+  <form class="card" id="form" method="post" novalidate>
+    {% for k, label, type, req in [('name','Name','text',1),('email','Email','email',1),('school','School / Organization','text',0)] %}
+    <label for="{{ k }}">{{ label }}{% if req %} *{% endif %}</label>
+    <input id="{{ k }}" name="{{ k }}" type="{{ type }}" value="{{ form.get(k,'') }}" {% if req %}required{% endif %}>
+    <span class="err" data-for="{{ k }}">{{ errors.get(k,'') }}</span>
+    {% endfor %}
+    <label for="role">Role *</label>
+    <select id="role" name="role" required><option value="">Select…</option>{% for r in ['Student','Teacher','Parent','Visitor'] %}<option {% if form.get('role')==r %}selected{% endif %}>{{ r }}</option>{% endfor %}</select>
+    <span class="err" data-for="role">{{ errors.get('role','') }}</span>
+    <fieldset class="stars"><legend>Rating *</legend>
+      {% for i in range(5, 0, -1) %}<input type="radio" id="s{{ i }}" name="rating" value="{{ i }}" {% if form.get('rating')==i|string %}checked{% endif %}><label for="s{{ i }}" title="{{ i }} stars"><span class="sr">{{ i }} stars</span>★</label>{% endfor %}
+    </fieldset>
+    <span class="err" data-for="rating">{{ errors.get('rating','') }}</span>
+    <label for="message">Feedback *</label><textarea id="message" name="message" rows="5" required>{{ form.get('message','') }}</textarea>
+    <span class="err" data-for="message">{{ errors.get('message','') }}</span>
+    <button class="btn" type="submit">Submit Feedback</button>
+  </form>
+  <div><h2>What People Say</h2>
+    {% for s in samples %}<blockquote class="card"><p class="starline" aria-label="{{ s.rating }} out of 5">{{ '★' * s.rating }}{{ '☆' * (5 - s.rating) }}</p><p>“{{ s.text }}”</p><footer>{{ s.name }}, {{ s.role }}</footer></blockquote>{% endfor %}
+  </div>
+</section>
+{% endblock %}

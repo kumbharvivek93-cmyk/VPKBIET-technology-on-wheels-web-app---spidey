@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Learning Activities{% endblock %}
+{% block content %}
+<section class="page-head"><h1>Learning Activities</h1><p>Hands-on technology experiences inside the bus.</p></section>
+<section class="wrap grid cards2">
+{% for a in d.ACTIVITIES %}
+<article class="card reveal"><span class="ico big">{{ a.icon }}</span><h2>{{ a.title }}</h2>
+  <p class="tags"><span class="tag">👥 {{ a.age }}</span><span class="tag">⏱ {{ a.duration }}</span></p>
+  <p>{{ a.short }}</p>
+  <details><summary class="btn ghost">Learn More</summary><p>{{ a.details }}</p></details>
+</article>
+{% endfor %}
+</section>
+{% endblock %}

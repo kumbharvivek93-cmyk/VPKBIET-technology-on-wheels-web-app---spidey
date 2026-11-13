@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<section class="page-head"><h1>Contact Us</h1><p>Invite the bus to your school or join as a volunteer.</p></section>
+<section class="wrap grid2 reveal">
+  <form class="card" id="form" method="post" novalidate>
+    {% for k, label, type, req in [('name','Name','text',1),('email','Email','email',1),('phone','Phone','tel',0),('school','School / Organization','text',0)] %}
+    <label for="{{ k }}">{{ label }}{% if req %} *{% endif %}</label>
+    <input id="{{ k }}" name="{{ k }}" type="{{ type }}" value="{{ form.get(k,'') }}" {% if req %}required{% endif %}>
+    <span class="err" data-for="{{ k }}">{{ errors.get(k,'') }}</span>
+    {% endfor %}
+    <label for="message">Message *</label><textarea id="message" name="message" rows="5" required>{{ form.get('message','') }}</textarea>
+    <span class="err" data-for="message">{{ errors.get('message','') }}</span>
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+  <div class="card"><h2>Get in Touch</h2>
+    <p>📧 {{ contact.email }}<br>📞 {{ contact.phone }}<br>📍 {{ contact.address }}<br>🎓 {{ contact.college }}</p>
+    <p class="social">{% for n, u in contact.social %}<a href="{{ u }}" rel="noopener">{{ n }}</a>{% endfor %}</p>
+    <iframe title="VPKBIET on Google Maps" loading="lazy" class="map" src="https://maps.google.com/maps?q={{ contact.map_query|urlencode }}&output=embed"></iframe>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Project Gallery{% endblock %}
+{% block content %}
+<section class="page-head"><h1>Project Gallery</h1><p>Moments and projects from Technology on Wheels.</p></section>
+<section class="wrap">
+  <div class="filters" role="group" aria-label="Filter projects"><button class="chip active" data-f="all">All</button>{% for c in cats %}<button class="chip" data-f="{{ c }}">{{ c }}</button>{% endfor %}</div>
+  <div class="grid cards gallery">
+  {% for p in projects %}
+  <article class="card proj" data-cat="{{ p.cat }}" tabindex="0" role="button" aria-label="Open {{ p.title }}" data-title="{{ p.title }}" data-desc="{{ p.desc }}" data-team="{{ p.team }}" data-img="{% if p.img %}{{ url_for('static', filename='img/gallery/' + p.img) }}{% endif %}" data-icon="{{ p.icon }}">
+    {% if p.img %}<img src="{{ url_for('static', filename='img/gallery/' + p.img) }}" alt="{{ p.title }}" loading="lazy">{% else %}<div class="ph">{{ p.icon }}</div>{% endif %}
+    <div class="pad"><span class="tag">{{ p.cat }}</span><h3>{{ p.title }}</h3><p>{{ p.desc }}</p><small>{{ p.team }}</small></div>
+  </article>
+  {% endfor %}
+  </div>
+</section>
+<div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-label="Project details">
+  <div class="lb-box"><button class="lb-x" aria-label="Close">✕</button><div id="lb-media"></div><h2 id="lb-t"></h2><p id="lb-d"></p><small id="lb-m"></small></div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<section class="page-head"><h1>About Technology on Wheels</h1></section>
+<section class="wrap reveal split">
+  <div><p class="lead">{{ d.ABOUT_FULL }}</p></div>
+  <img class="photo" src="{{ url_for('static', filename='img/gallery/bus-group.jpg') }}" alt="The Technology on Wheels bus with guests at its inauguration" loading="lazy">
+</section>
+<section class="wrap reveal grid2">
+  <article class="card"><h2>Our Vision</h2><p>{{ d.VISION }}</p></article>
+  <article class="card"><h2>Our Mission</h2><p>{{ d.MISSION_INTRO }}</p>
+    <ul class="ticks">{% for t, x in d.MISSION_POINTS %}<li><strong>{{ t }}.</strong> {{ x }}</li>{% endfor %}</ul></article>
+</section>
+<section class="wrap reveal grid2">
+  <article class="card"><h2>Why It Started</h2><p>{{ d.WHY }}</p></article>
+  <article class="card"><h2>Role of VPKBIET</h2><p>{{ d.VPKBIET_ROLE }}</p></article>
+</section>
+<section class="wrap reveal"><h2>Who It Is For</h2>
+  <div class="grid cards">{% for ic, t in d.AUDIENCE %}<article class="card"><span class="ico">{{ ic }}</span><h3>{{ t }}</h3></article>{% endfor %}</div>
+  <h2>Impact Goals</h2><p class="tags">{% for g in d.GOALS %}<span class="tag">{{ g }}</span>{% endfor %}</p></section>
+<section class="wrap reveal"><h2>Our Journey</h2>
+  <ul class="timeline">{% for when, what in d.TIMELINE %}<li><strong>{{ when }}</strong><p>{{ what }}</p></li>{% endfor %}</ul></section>
+<section class="wrap reveal"><h2>Team</h2><p>Student contributors, VPKBIET.</p>
+  <div class="grid cards">{% for n, roll, prn in d.TEAM %}<article class="card team"><span class="avatar" aria-hidden="true">{{ n[0] }}</span><h3>{{ n }}</h3><p>Roll No: {{ roll }}<br>PRN: {{ prn }}</p></article>{% endfor %}</div></section>
+{% endblock %}
