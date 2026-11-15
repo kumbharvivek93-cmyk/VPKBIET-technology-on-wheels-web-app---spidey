@@ -21,19 +21,8 @@
       <p class="cta"><a class="btn" href="#journey">{{ d.HERO.btn1 }}</a> <a class="btn ghost" href="{{ url_for('about') }}">{{ d.HERO.btn2 }}</a></p>
     </div>
     <div class="road" aria-hidden="true"><b></b></div>
-    <div class="bus" role="img" aria-label="Technology on Wheels bus illustration">
-      <svg viewBox="0 0 800 300">
-        <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2a6b"/><stop offset="1" stop-color="#0a1033"/></linearGradient>
-        <radialGradient id="hl"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient></defs>
-        <rect x="20" y="40" width="740" height="200" rx="34" fill="url(#bg)" stroke="#22d3ee" stroke-width="3"/>
-        <rect x="50" y="65" width="560" height="70" rx="12" fill="#22d3ee" opacity=".25" stroke="#22d3ee"/>
-        {% for i in range(6) %}<rect x="{{ 62 + i*92 }}" y="75" width="80" height="50" rx="8" fill="#0b1c4a" stroke="#a855f7"/>{% endfor %}
-        <path d="M630 65h90q30 0 30 30v40H630z" fill="#22d3ee" opacity=".35" stroke="#22d3ee"/>
-        <text x="310" y="195" text-anchor="middle" font-family="Orbitron,sans-serif" font-weight="800" font-size="34" fill="#fff">TECHNOLOGY ON WHEELS</text>
-        <text x="310" y="222" text-anchor="middle" font-family="Poppins,sans-serif" font-size="14" fill="#7dd3fc" letter-spacing="3">AN INITIATIVE OF VPKBIET</text>
-        <circle cx="770" cy="190" r="40" fill="url(#hl)"/><rect x="740" y="180" width="20" height="16" rx="4" fill="#fff"/>
-        {% for cx in (150, 600) %}<circle cx="{{ cx }}" cy="245" r="42" fill="#050816" stroke="#a855f7" stroke-width="5"/><circle cx="{{ cx }}" cy="245" r="16" fill="#22d3ee"/>{% endfor %}
-      </svg>
+    <div class="bus">
+      <img src="{{ url_for('static', filename='img/activities/technology-on-wheels-bus.jpg') }}" alt="Technology on Wheels bus">
     </div>
     <a class="scroll-hint" href="#mission" aria-label="Scroll down">Scroll ↓</a>
   </div>
@@ -42,6 +31,7 @@
 <section class="wrap reveal" id="mission">
   <h2>Our Mission</h2>
   <p class="lead">{{ d.HOME_MISSION }}</p>
+  <div class="grid mission-points">{% for title, text in d.HOME_MISSION_POINTS %}<article class="card"><h3>{{ title }}</h3><p>{{ text }}</p></article>{% endfor %}</div>
   <div class="grid cards">{% for ic, t in d.HIGHLIGHTS %}<article class="card"><span class="ico">{{ ic }}</span><h3>{{ t }}</h3></article>{% endfor %}</div>
 </section>
 
