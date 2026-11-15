@@ -4,10 +4,22 @@
 <section class="page-head"><h1>Learning Activities</h1><p>Hands-on technology experiences inside the bus.</p></section>
 <section class="wrap grid cards2">
 {% for a in d.ACTIVITIES %}
-<article class="card reveal"><span class="ico big">{{ a.icon }}</span><h2>{{ a.title }}</h2>
+<article class="card reveal activity-card">
+  <img class="activity-image" src="{{ url_for('static', filename='img/activities/' ~ d.ACTIVITY_IMAGES[a.title]) }}" alt="{{ a.title }} learning activity" loading="lazy">
+  <span class="ico big">{{ a.icon }}</span><h2>{{ a.title }}</h2>
   <p class="tags"><span class="tag">👥 {{ a.age }}</span><span class="tag">⏱ {{ a.duration }}</span></p>
   <p>{{ a.short }}</p>
-  <details><summary class="btn ghost">Learn More</summary><p>{{ a.details }}</p></details>
+  {% set facts = d.ACTIVITY_FACTS[a.title] %}
+  <details><summary class="btn ghost">Learn More</summary>
+    <div class="activity-details">
+      <p>{{ a.details }}</p>
+      <h3>Purpose</h3><p>{{ facts.purpose }}</p>
+      <h3>Applications</h3><ul>{% for item in facts.applications %}<li>{{ item }}</li>{% endfor %}</ul>
+      <h3>Hiring Companies</h3><p>{{ facts.hiring }}</p>
+      <h3>Salary Packages (India)</h3><p>{{ facts.salary }}</p>
+      <h3>Prominent Experts</h3><p>{{ facts.experts }}</p>
+    </div>
+  </details>
 </article>
 {% endfor %}
 </section>
