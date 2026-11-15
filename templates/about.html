@@ -21,5 +21,6 @@
 <section class="wrap reveal"><h2>Our Journey</h2>
   <ul class="timeline">{% for when, what in d.TIMELINE %}<li><strong>{{ when }}</strong><p>{{ what }}</p></li>{% endfor %}</ul></section>
 <section class="wrap reveal"><h2>Team</h2><p>Student contributors, VPKBIET.</p>
-  <div class="grid cards">{% for n, roll, prn in d.TEAM %}<article class="card team"><span class="avatar" aria-hidden="true">{{ n[0] }}</span><h3>{{ n }}</h3><p>Roll No: {{ roll }}<br>PRN: {{ prn }}</p></article>{% endfor %}</div></section>
+  <p class="mentor">Under the Guidance of <strong>Ms. S. R. Sabale</strong></p>
+  <div class="grid cards">{% for n, roll, prn in d.TEAM %}<article class="card team"><span class="avatar" aria-hidden="true">{{ n[0] }}</span><h3 class="{% if n == 'Mulik Aditya Sharad' %}contributor-highlight{% endif %}">{{ n }}</h3><p>Roll No: {{ roll }}<br>PRN: {{ prn }}</p></article>{% endfor %}</div></section>
 {% endblock %}
