@@ -19,6 +19,16 @@ STEPS = [("🚌", "Bus reaches school"), ("🔍", "Students explore activities")
 
 HOME_MISSION = ("Technology on Wheels is a VPKBIET initiative to take technology, innovation, and "
                 "practical learning directly to schools and students across India.")
+HOME_MISSION_POINTS = [
+    ("Bridge the rural-urban tech divide",
+     "The bus travels directly to rural and remote schools to give students hands-on exposure to advanced technologies they would otherwise lack access to."),
+    ("Provide practical, interactive demonstrations",
+     "Rather than functioning as a passive display, the mobile center houses working models and interactive tools—including a guide robot—to make learning engaging."),
+    ("Promote emerging technology literacy",
+     "It introduces young learners to foundational concepts in Artificial Intelligence (AI), Machine Learning, Robotics, IoT, Drone Technology, 3D Printing, and AR/VR."),
+    ("Foster early skill development and innovation",
+     "By sparking curiosity at the school level, the initiative aims to build future-ready technical skills and inspire rural youth toward innovation."),
+]
 
 WHY = "To remove geographical and financial barriers that keep rural students away from modern STEM infrastructure."  # EDITABLE
 VPKBIET_ROLE = ("The bus is launched by Vidya Pratishthan's Sharadchandra Pawar Centre of Excellence in "
@@ -34,7 +44,9 @@ CONTACT = {"email": "vpspcoe.ai@vidyapratishthan.com", "phone": "91 2112 239504"
            "address": "VPKBIET, Vidyanagari, MIDC, Baramati, Pune, Maharashtra 413133",  # EDITABLE
            "college": "Vidya Pratishthan's Kamalnayan Bajaj Institute of Engineering & Technology (VPKBIET)",
            "map_query": "VPKBIET Baramati",
-           "social": [("Instagram", "#"), ("YouTube", "#"), ("LinkedIn", "#"), ("Facebook", "#")]}
+           "social": [("YouTube", "https://youtube.com/@vpkbietbaramati5418?feature=shared"),
+                      ("Instagram", "https://www.instagram.com/vpkbiet.baramati?srtk=Ym0zZnoxeGV6c3Np"),
+                      ("Facebook", "https://www.facebook.com/share/1MRx9HPxYm/")]}
 
 # Gallery: first group uses your real photos (static/img/gallery). Others are EDITABLE placeholders (no image -> icon).
 PROJECTS = [
@@ -48,6 +60,22 @@ PROJECTS = [
  {"title": "Exploring the Mobile Lab", "cat": "Inside the Bus", "img": "inside2.jpg", "team": "VPSPCOE", "desc": "Hands-on demonstrations of AI, Robotics and AR."},
  {"title": "Robot Guide Demonstration", "cat": "Inside the Bus", "img": "inside3.jpg", "team": "VPSPCOE", "desc": "The onboard interactive robot explaining the systems."},
  {"title": "Technology Showcase", "cat": "Inside the Bus", "img": "inside4.jpg", "team": "VPSPCOE", "desc": "Visitors learning about the exhibits."},
+ {"title": "Augmented and Virtual Reality Display", "cat": "AR/VR", "img": "tow-ar-vr.jpg", "team": "Technology on Wheels", "desc": "The AR/VR learning display introduces immersive and augmented-reality experiences."},
+ {"title": "Mobile Robotics Models", "cat": "Robotics", "img": "robotics-models.jpg", "team": "Technology on Wheels", "desc": "Small wheeled robotics models demonstrate mobile robot designs."},
+ {"title": "Robotics Learning Display", "cat": "Robotics", "img": "robotics-poster.jpg", "team": "Technology on Wheels", "desc": "A learning display introduces robotics components, applications, and skills."},
+ {"title": "Internet of Things Display", "cat": "IoT", "img": "iot-poster.jpg", "team": "Technology on Wheels", "desc": "The IoT display explains connected devices, sensors, and automation."},
+ {"title": "Technology on Wheels Bus: Front Detail", "cat": "Inauguration", "img": "bus-front-closeup.jpg", "team": "Technology on Wheels", "desc": "A close view of the decorated front of the Technology on Wheels bus."},
+ {"title": "Drone Technology Display", "cat": "Drone Technology", "img": "drone-poster.jpg", "team": "Technology on Wheels", "desc": "A learning display highlights drone components and real-world applications."},
+ {"title": "PLC Trainer Unit", "cat": "PLC & Automation", "img": "plc-trainer.jpg", "team": "Technology on Wheels", "desc": "The PLC trainer demonstrates industrial inputs, sensors, indicators, and motor controls."},
+ {"title": "Technology on Wheels Bus: Front View", "cat": "Inauguration", "img": "bus-front.jpg", "team": "Technology on Wheels", "desc": "The Technology on Wheels bus photographed from the front."},
+ {"title": "Interactive Guide Robot Station", "cat": "Inside the Bus", "img": "guide-robot-station.jpg", "team": "Technology on Wheels", "desc": "The onboard guide robot station inside the mobile technology center."},
+ {"title": "Guide Robot Model", "cat": "Inside the Bus", "img": "guide-robot-model.jpg", "team": "Technology on Wheels", "desc": "A close look at the robot model presented to visiting students."},
+ {"title": "Technology on Wheels Bus: Side View", "cat": "Inauguration", "img": "bus-side.jpg", "team": "Technology on Wheels", "desc": "A side view of the bus and its technology-themed exterior."},
+ {"title": "IoT Demonstration Setup", "cat": "IoT", "img": "iot-display.jpg", "team": "Technology on Wheels", "desc": "An IoT learning display inside the mobile lab."},
+ {"title": "Technology on Wheels Bus: Exterior", "cat": "Inauguration", "img": "bus-side-angle.jpg", "team": "Technology on Wheels", "desc": "The bus exterior showcases the initiative's technology themes."},
+ {"title": "Industrial Automation Display", "cat": "PLC & Automation", "img": "automation-poster.jpg", "team": "Technology on Wheels", "desc": "A learning display introduces PLC-SCADA systems and industrial automation."},
+ {"title": "3D Printing Demonstration", "cat": "3D Printing", "img": "3d-printer-demo.jpg", "team": "Technology on Wheels", "desc": "A desktop 3D printer and its learning display demonstrate additive manufacturing."},
+ {"title": "Drone Hardware Model", "cat": "Drone Technology", "img": "drone-model.jpg", "team": "Technology on Wheels", "desc": "A close view of the drone hardware model used for demonstrations."},
  {"title": "Line-Follower Robot", "cat": "Robotics", "img": "", "icon": "🤖", "team": "School Team A (EDITABLE)", "desc": "Placeholder project. Replace with a real student project."},
  {"title": "Crop Disease Detector", "cat": "AI", "img": "", "icon": "🧠", "team": "School Team B (EDITABLE)", "desc": "Placeholder project. Replace with a real student project."},
  {"title": "Smart Irrigation", "cat": "IoT", "img": "", "icon": "📡", "team": "School Team C (EDITABLE)", "desc": "Placeholder project. Replace with a real student project."},
@@ -214,6 +242,133 @@ ACTIVITIES = [{'age': 'Classes 6–12',
            'multi-rotor drones, including brushless motors, electronic speed controllers (ESCs), flight '
            'controllers, lithium-polymer batteries, and GPS modules.',
   'title': 'Drone Technology (Unmanned Aerial Vehicles)'}]
+ACTIVITIES.append({
+    'age': 'Classes 7–12',
+    'details': 'A Programmable Logic Controller (PLC) is a rugged industrial computer that reads sensor inputs, executes programmed logic, and controls machinery in real time. PLCs are designed to operate continuously in demanding environments with heat, dust, vibration, and electrical noise.',
+    'duration': '15–25 min',
+    'icon': '⚙️',
+    'short': 'Explore how PLCs monitor sensors and control industrial machines safely and reliably in real time.',
+    'title': 'PLC Industrial Automation',
+})
+
+ACTIVITY_IMAGES = {
+    'Artificial Intelligence (AI) and Machine Learning (ML)': 'ai-ml.jpg',
+    'Robotics and Automation': 'robotics.jpg',
+    'Internet of Things (IoT)': 'iot.jpg',
+    'Augmented Reality (AR)': 'ar-vr.jpg',
+    'Virtual Reality (VR)': 'ar-vr.jpg',
+    '3D Printing (Additive Manufacturing)': '3d-printing.jpg',
+    'Drone Technology (Unmanned Aerial Vehicles)': 'drone-technology.jpg',
+    'PLC Industrial Automation': 'plc.jpg',
+}
+
+ACTIVITY_FACTS = {
+    'Artificial Intelligence (AI) and Machine Learning (ML)': {
+        'purpose': 'AI enables computer systems to mimic human intelligence, while ML allows those systems to learn from data and improve without explicit programming.',
+        'applications': [
+            'Detecting crop diseases early in smart agriculture using leaf image analysis.',
+            'Assisting doctors with medical diagnostics by scanning X-rays and MRIs.',
+            'Powering voice assistants and language translation tools on smartphones.',
+            'Recommending personalized movies, music, and products on online platforms.',
+            'Detecting fraudulent banking transactions in real time.',
+        ],
+        'hiring': 'Tata Consultancy Services (TCS), Infosys, Google India, Microsoft India, and Fractal Analytics.',
+        'salary': 'Lowest: ₹4.5 LPA (Entry-level analyst) | Average: ₹10–14 LPA | Highest: ₹35–50+ LPA (Senior AI/ML Scientist).',
+        'experts': 'Andrew Ng (Co-founder of Google Brain and Coursera), Yann LeCun (Chief AI Scientist at Meta), and Dr. Manish Gupta (Director at Google Research India).',
+    },
+    'Robotics and Automation': {
+        'purpose': 'Robotics focuses on designing programmable machines capable of carrying out physical tasks, while automation uses control systems to operate equipment with minimal human intervention.',
+        'applications': [
+            'Welding, painting, and assembling car bodies on automotive production lines.',
+            'Sorting, packing, and moving heavy goods inside automated e-commerce warehouses.',
+            'Assisting surgeons in performing high-precision, minimally invasive operations.',
+            'Handling hazardous chemicals and radioactive materials safely in factories.',
+            'Guiding visitors and answering basic queries using interactive humanoid robots.',
+        ],
+        'hiring': 'ABB India, FANUC India, Siemens, GreyOrange, and Tata Motors.',
+        'salary': 'Lowest: ₹3.5 LPA | Average: ₹7–10 LPA | Highest: ₹22–30 LPA.',
+        'experts': 'Rodney Brooks (Co-founder of iRobot), Marc Raibert (Founder of Boston Dynamics), and Dr. Raj Reddy (Turing Award winner and robotics pioneer).',
+    },
+    'Internet of Things (IoT)': {
+        'purpose': 'IoT connects everyday physical objects embedded with sensors and software to the internet so they can collect and exchange data.',
+        'applications': [
+            'Automating drip irrigation in farms based on live soil moisture sensor data.',
+            'Controlling home lights, air conditioners, and security cameras remotely via smartphones.',
+            'Monitoring factory machines continuously to predict breakdowns before they happen.',
+            'Tracking the real-time location and temperature of food and medicine shipments.',
+            'Managing smart street lights and waste bins in modern smart cities.',
+        ],
+        'hiring': 'Bosch Global Software Technologies, Wipro, L&T Technology Services (LTTS), Reliance Jio, and Honeywell.',
+        'salary': 'Lowest: ₹3.8 LPA | Average: ₹8–11 LPA | Highest: ₹25+ LPA.',
+        'experts': 'Kevin Ashton (coined the term “Internet of Things”) and Sanjay Sarma (Co-founder of the Auto-ID Center at MIT).',
+    },
+    'Augmented Reality (AR)': {
+        'purpose': 'AR enhances the real physical environment by overlaying digital images, 3D models, text, or animations onto what you see through a smartphone, tablet, or smart glasses.',
+        'applications': [
+            'Displaying step-by-step repair instructions directly onto factory machinery for technicians.',
+            'Letting online shoppers preview how furniture, clothes, or glasses look in their real homes before buying.',
+            'Bringing flat textbook diagrams to life as interactive 3D models for school and college students.',
+            'Showing real-time navigation arrows and speed limits on car windshields (Heads-Up Displays).',
+            'Powering interactive face filters and location-based games on smartphones.',
+        ],
+        'hiring': 'Meta, Snap Inc., Accenture, Infosys, and Tesseract (Reliance Jio).',
+        'salary': 'Lowest: ₹3.8 LPA | Average: ₹7.5–11 LPA | Highest: ₹22–30 LPA.',
+        'experts': 'Tom Caudell (coined the term “Augmented Reality” in 1990 at Boeing), Ronald Azuma (AR researcher and author), and Alex Kipman (Lead creator of Microsoft HoloLens).',
+    },
+    'Virtual Reality (VR)': {
+        'purpose': 'VR completely blocks out the physical world and places the user inside a 360-degree, computer-generated 3D simulation using a head-mounted display and motion controllers.',
+        'applications': [
+            'Training medical students to practice complex surgeries safely without risk to real patients.',
+            'Simulating flight emergencies and cockpit controls for pilot and defense training.',
+            'Allowing architects and homebuyers to walk inside virtual buildings before construction begins.',
+            'Taking rural school students on virtual field trips to outer space, historical monuments, or science labs.',
+            'Creating immersive 3D video games and virtual fitness experiences.',
+        ],
+        'hiring': 'Unity Technologies, Cognizant, Tata Elxsi, TCS, and Ubisoft India.',
+        'salary': 'Lowest: ₹4.0 LPA | Average: ₹8–12 LPA | Highest: ₹24–32 LPA.',
+        'experts': 'Palmer Luckey (Founder of Oculus VR), John Carmack (VR pioneer and former CTO of Oculus), and Jaron Lanier (computer scientist who popularized the term “Virtual Reality”).',
+    },
+    '3D Printing (Additive Manufacturing)': {
+        'purpose': '3D printing builds three-dimensional solid objects layer by layer from a digital CAD (Computer-Aided Design) file.',
+        'applications': [
+            'Creating custom-fitted medical prosthetics, dental implants, and hearing aids.',
+            'Manufacturing lightweight, complex metal parts for airplanes and rockets.',
+            'Building quick physical prototypes of new product designs for engineers to test.',
+            'Producing specialized spare parts on demand without needing expensive factory molds.',
+            'Constructing affordable, rapid-build concrete houses in the construction sector.',
+        ],
+        'hiring': 'Stratasys, HP Inc., GE Aerospace, Wipro 3D, and Godrej & Boyce.',
+        'salary': 'Lowest: ₹3.0 LPA | Average: ₹6–9 LPA | Highest: ₹18–22 LPA.',
+        'experts': 'Chuck Hull (Inventor of stereolithography and co-founder of 3D Systems) and Dr. Adrian Bowyer (Founder of the open-source RepRap 3D printer project).',
+    },
+    'Drone Technology (Unmanned Aerial Vehicles)': {
+        'purpose': 'Drone technology involves autonomous or remotely piloted aircraft equipped with cameras, GPS, and specialized sensors.',
+        'applications': [
+            'Spraying fertilizers and pesticides accurately over large agricultural fields.',
+            'Mapping land boundaries and surveying construction sites from the air.',
+            'Inspecting high-voltage power lines, wind turbines, and bridges safely without scaffolding.',
+            'Delivering emergency medicines and blood supplies to remote rural areas.',
+            'Assisting rescue teams in locating stranded people during floods and disasters.',
+        ],
+        'hiring': 'ideaForge, Garuda Aerospace, Skye Air Mobility, Asteria Aerospace, and Marut Drones.',
+        'salary': 'Lowest: ₹3.0 LPA (Certified Drone Pilot) | Average: ₹6–10 LPA (Drone Engineer) | Highest: ₹20+ LPA (Autonomous Systems Lead).',
+        'experts': 'Frank Wang (Founder of DJI), Ankit Mehta (Co-founder & CEO of ideaForge), and Agnishwar Jayaprakash (Founder of Garuda Aerospace).',
+    },
+    'PLC Industrial Automation': {
+        'purpose': 'A PLC is a ruggedized, heavy-duty industrial computer designed to monitor inputs from sensors, make logic-based decisions, and control factory machinery in real time. Unlike standard computers, PLCs are built to operate continuously in harsh environments with extreme heat, dust, vibration, and electrical noise without failing.',
+        'applications': [
+            'Controlling high-speed bottling, filling, and packaging lines in food and beverage factories.',
+            'Operating automated conveyor belts and robotic arms in manufacturing plants.',
+            'Regulating water flow, filtration, and chemical dosing in municipal water treatment plants.',
+            'Managing city traffic light signals and railway track switching systems.',
+            'Monitoring and controlling turbines, boilers, and power distribution in electrical substations.',
+        ],
+        'hiring': 'Siemens, Rockwell Automation (Allen-Bradley), ABB India, Schneider Electric, Mitsubishi Electric India, Larsen & Toubro (L&T), and Emerson.',
+        'salary': 'Lowest: ₹2.8–4.0 LPA (Graduate Engineer Trainee / Junior Control Engineer) | Average: ₹6.5–10.5 LPA (PLC/SCADA Automation Engineer) | Highest: ₹18–28+ LPA (Lead Automation Architect / Principal Control Systems Engineer).',
+        'experts': 'Dick Morley (known as the “Father of the PLC” for inventing the first commercial PLC, the Modicon 084, in 1968), Odo Josef Struger (Co-inventor of the PLC at Allen-Bradley and pioneer of the acronym “PLC”), and Peter Terwiesch (Former President of Industrial Automation at ABB).',
+    },
+}
+
 ABOUT_FULL = ('The Technology on Wheels bus is an innovative mobile educational laboratory launched by Vidya '
  'Pratishthan’s Sharadchandra Pawar Centre of Excellence in Artificial Intelligence (VPSPCOE) in '
  'collaboration with the Sakal Media Group. Inaugurated in June 2026 by Sharad Pawar alongside Supriya Sule '
