@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Vivek Kumbhar",
+    "email": "kumbharvivek93@gmail.com",
+    "role": "Student",
+    "rating": "5",
+    "message": "amazing",
+    "school": "MEs baramati",
+    "submitted_at": "2026-11-13T07:54:33"
+  },
+  {
+    "name": "Varsha Dadaso Kumbhar",
+    "email": "varshadkumbhar2020@gmail.com",
+    "role": "Teacher",
+    "rating": "5",
+    "message": "hey all bus dmm goood",
+    "school": "MEs baramati",
+    "submitted_at": "2026-11-13T17:02:06"
+  }
+]
