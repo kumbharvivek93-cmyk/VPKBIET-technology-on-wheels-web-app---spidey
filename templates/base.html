@@ -12,7 +12,7 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav" id="nav">
-  <a class="brand" href="{{ url_for('index') }}">{{ site.name }}</a>
+  <a class="brand" href="{{ url_for('index') }}"><img class="brand-logo" src="{{ url_for('static', filename='img/vpkbiet-logo.jpg') }}" alt="VPKBIET logo">{{ site.name }}</a>
   <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="links">☰</button>
   <nav id="links" class="links" aria-label="Main">
     {% for label, ep in nav %}<a href="{{ url_for(ep) }}" {% if request.endpoint == ep %}aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}
@@ -26,7 +26,7 @@
   <div class="wrap grid3">
     <div><h3>{{ site.name }}</h3><p>An initiative of {{ site.college }}.<br>{{ site.tagline }}</p></div>
     <div><h3>Contact</h3><p>{{ contact.email }}<br>{{ contact.phone }}</p></div>
-    <div><h3>Follow</h3><p class="social">{% for n, u in contact.social %}<a href="{{ u }}" rel="noopener">{{ n }}</a>{% endfor %}</p></div>
+    <div><h3>Follow</h3><p class="social">{% for n, u in contact.social %}<a href="{{ u }}" target="_blank" rel="noopener noreferrer">{{ n }}</a>{% endfor %}</p></div>
   </div>
   <p class="copy">© <span id="yr">2026</span> {{ site.name }} · {{ site.college }}. All rights reserved.</p>
 </footer>
